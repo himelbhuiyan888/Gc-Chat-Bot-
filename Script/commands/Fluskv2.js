@@ -15,16 +15,16 @@ async function getApiUrl() {
 
 module.exports = {
   config: {
-    name: "fluskv2",
+    name: "imgshipu",
     version: "1.0",
-    author: "Team Calyx (Modified by Chitron)",
+    author: "Chitron Bhattacharjee",
     countDown: 5,
     role: 0,
     shortDescription: "Generate AI images via FLUX",
     longDescription: "Generates 4 AI images from a prompt using FLUX API and allows selection.",
     category: "ai",
     guide: {
-      en: "{prefix}fluskv2 <prompt> [-m 1/2/3]"
+      en: "{prefix}imgshipu <prompt> [-m 1/2/3]"
     }
   },
 
@@ -53,7 +53,7 @@ module.exports = {
 
       const apiUrl = await getApiUrl();
 
-      const cacheFolderPath = path.join(__dirname, "tmp");
+      const cacheFolderPath = path.join(__dirname, "cache");
       if (!fs.existsSync(cacheFolderPath)) fs.mkdirSync(cacheFolderPath);
 
       const modelParam = Array(4).fill(styleMap[model]).join("/");
